@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh" xml:th="http://www.thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Mp项目</title>
+    <link rel="stylesheet" th:href="@{/webjars/layui/css/layui.css}">
+</head>
+<style>
+    body{text-align:center}
+    .divcss5{margin:0 auto;width:400px;height:100px;border:0px solid #000}
+    .divcss6{margin:0 auto;width:400px;height:200px;border:0px solid #000}
+</style>
+<body>
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="divcss6">
+            </div>
+            <div class="divcss5">
+                <h1 align="center">MP小项目</h1>
+            </div>
+            <div class="layui-col-md12" style="align-content: center">
+            </div>
+        </div>
+        <div class="layui-row">
+            <div class="layui-c0l-md6 layui-col-md-offset3">
+                <form class="layui-form" method="post" th:action="@{/auth/login}">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">用户名</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="userName" required lay-verify="required"
+                            placeholder="请输入用户名" autocomplete="off" class="layui-input"
+                            maxlength="20" style="width: 400px;" value="mp">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">密码</label>
+                        <div class="layui-input-block">
+                            <input type="password" name="password" required lay-verify="required"
+                                   placeholder="请输入密码" autocomplete="off" class="layui-input"
+                                   maxlength="20" style="width: 400px;" value="123456">
+                        </div>
+                    </div>
+                    <div class="layui-form-item" th:if="${not #strings.isEmpty(error)}">
+                        <font color="red" th:text="${error}"></font>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="formDemo">登陆</button>
+                            <button class="layui-btn" type="reset"  layui-btn-primary>重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<script th:src="@{/webjars/layui/layui.all.js}"></script>
+</body>
+</html>
