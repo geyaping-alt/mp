@@ -9,14 +9,12 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.imooc.project.entity.Customer;
 import com.imooc.project.service.CustomerService;
 import com.imooc.project.util.ResultUtil;
-import com.imooc.project.vo.ResultVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.stereotype.Controller;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**
