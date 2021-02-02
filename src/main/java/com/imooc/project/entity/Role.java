@@ -1,10 +1,13 @@
 package com.imooc.project.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.imooc.project.entity.BaseEntity;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import java.util.List;
 
 /**
  * <p>
@@ -36,5 +39,6 @@ public class Role extends BaseEntity {
      */
     private String remark;
 
-
+    @TableField(exist = false)
+    private List<Long> resourceIds;
 }

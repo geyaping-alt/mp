@@ -21,9 +21,14 @@ function openLayer(url,title) {
  * @param filter
  * @param type
  */
-function mySubmit(filter,type) {
+function mySubmit(filter,type,func) {
 
     layui.form.on('sumbit('+filter+')',function (data) {
+
+        if(typeof (func) != 'undefined'){
+            func(data.field);
+        }
+
         $.ajax({
             url: data.form.action
             ,async: false
